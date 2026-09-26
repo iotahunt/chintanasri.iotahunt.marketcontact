@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chintanasri — Product Research & Market Analysis</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
+      color: #e8e8e8;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+      font-size: 16px;
+      background-attachment: fixed;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Typography */
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 8vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: #d4af37;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      font-weight: 400;
+      line-height: 1.3;
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    h2 em {
+      font-style: italic;
+      color: #d4af37;
+    }
+
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 1.3;
+      color: #ffffff;
+      margin-bottom: 1rem;
+    }
+
+    h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #d4af37;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: #d0d0d0;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    p em {
+      color: #d4af37;
+      font-style: italic;
+    }
+
+    a {
+      color: #d4af37;
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+
+    a:hover {
+      opacity: 0.8;
+    }
+
+    /* Buttons */
+    button, .btn {
+      background: linear-gradient(135deg, #d4af37 0%, #e8c547 100%);
+      color: #000000;
+      border: none;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+      text-decoration: none;
+    }
+
+    button:hover, .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+    }
+
+    button:active, .btn:active {
+      transform: translateY(-1px);
+    }
+
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    /* Sections */
+    section {
+      padding: 5rem 0;
+      border-top: 1px solid rgba(212, 175, 55, 0.1);
+    }
+
+    section:first-child {
+      border-top: none;
+    }
+
+    section.dark {
+      background: rgba(10, 10, 10, 0.5);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      padding: 6rem 0 4rem 0;
+      background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+                  radial-gradient(circle at 70% 30%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+      border-top: none;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-pill {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border: 1px solid #d4af37;
+      border-radius: 25px;
+      font-size: 0.75rem;
+      color: #d4af37;
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: #b0b0b0;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .hero-quote {
+      background: rgba(26, 26, 26, 0.8);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-radius: 1.5rem;
+      margin: 2rem 0;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .hero-quote p {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: #d0d0d0;
+      font-style: italic;
+      margin: 0;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-right {
+      background: rgba(26, 26, 26, 0.7);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-radius: 2rem;
+      border: 1px solid rgba(212, 175, 55, 0.15);
+    }
+
+    .hero-card {
+      padding: 1.5rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+      transition: border-color 0.3s;
+    }
+
+    .hero-card:last-child {
+      border-bottom: none;
+    }
+
+    .hero-card:hover {
+      border-color: rgba(212, 175, 55, 0.3);
+    }
+
+    .hero-card-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #d4af37;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-card p {
+      font-size: 0.95rem;
+      margin: 0;
+      color: #b0b0b0;
+    }
+
+    /* Section Headers */
+    .section-header {
+      margin-bottom: 3rem;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      color: #d4af37;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    /* CARDS SECTION */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .card {
+      background: rgba(26, 26, 26, 0.6);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(212, 175, 55, 0.15);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      transition: all 0.3s;
+    }
+
+    .card:hover {
+      border-color: rgba(212, 175, 55, 0.4);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
+    }
+
+    .card-label {
+      font-size: 0.75rem;
+      color: #d4af37;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: #ffffff;
+      margin-bottom: 1rem;
+    }
+
+    .card-description {
+      color: #b0b0b0;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-footer {
+      font-size: 0.75rem;
+      color: #d4af37;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(212, 175, 55, 0.1);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 600;
+    }
+
+    /* TWO COLUMN */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    /* COMPARISON LIST */
+    .comparison-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .comparison-list h3 {
+      grid-column: 1 / -1;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+
+    .comparison-list h3:first-of-type {
+      margin-top: 0;
+    }
+
+    .list-item {
+      display: flex;
+      gap: 1rem;
+      padding: 0.7rem 0;
+      color: #b0b0b0;
+      font-size: 0.95rem;
+    }
+
+    .list-item::before {
+      content: "•";
+      color: #d4af37;
+      font-weight: bold;
+      flex-shrink: 0;
+      font-size: 1.3rem;
+    }
+
+    /* STEPS */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .step {
+      background: rgba(26, 26, 26, 0.6);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-radius: 1.5rem;
+      border: 1px solid rgba(212, 175, 55, 0.15);
+      transition: all 0.3s;
+    }
+
+    .step:hover {
+      border-color: rgba(212, 175, 55, 0.3);
+    }
+
+    .step-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: #d4af37;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+      font-weight: 600;
+    }
+
+    .step h3 {
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+
+    .step p {
+      color: #b0b0b0;
+      font-size: 0.95rem;
+    }
+
+    /* FORM SECTION */
+    .form-section {
+      background: rgba(26, 26, 26, 0.8);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 2rem;
+      padding: 3rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #d4af37;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      padding: 1rem;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 0.8rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.05);
+      color: #e8e8e8;
+      transition: all 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #d4af37;
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #666666;
+    }
+
+    .form-submit {
+      grid-column: 1 / -1;
+      margin-top: 1.5rem;
+      width: 100%;
+    }
+
+    .form-message {
+      grid-column: 1 / -1;
+      padding: 1.5rem;
+      border-radius: 0.8rem;
+      display: none;
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    .form-message.success {
+      background: rgba(76, 175, 80, 0.15);
+      color: #81c784;
+      border: 1px solid rgba(76, 175, 80, 0.3);
+      display: block;
+    }
+
+    .form-message.error {
+      background: rgba(244, 67, 54, 0.15);
+      color: #ef5350;
+      border: 1px solid rgba(244, 67, 54, 0.3);
+      display: block;
+    }
+
+    /* CONTACT BOX */
+    .contact-box {
+      background: rgba(26, 26, 26, 0.6);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(212, 175, 55, 0.15);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-box h4 {
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-box p {
+      margin: 0;
+      font-size: 1.05rem;
+    }
+
+    /* QUOTE SECTION */
+    .quote-section {
+      background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+      padding: 3rem;
+      border-radius: 2rem;
+      text-align: center;
+      margin: 2rem 0;
+      border: 1px solid rgba(212, 175, 55, 0.15);
+    }
+
+    .quote-section h2 {
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 1rem;
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+      }
+
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .btn-group {
+        flex-direction: column;
+      }
+
+      button, .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .comparison-list {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      section {
+        padding: 3rem 0;
+      }
+    }
+
+    /* Utility */
+    .text-center {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content">
+      <div>
+        <span class="hero-pill"> Research & Market Intelligence Studio</span>
+        <h1>Research what exists. <em>Understand what matters.</em> Discover what could be better. <em>That is innovation.</em></h1>
+        
+        <p class="hero-subtitle">I research products, markets, competitors, and human experiences to illuminate what exists, what resonates, what fails quietly, and what can become enduringly better.</p>
+
+        <div class="hero-quote">
+          <p>"Only a consumer can design a product that solves a problem. We are the consumers."</p>
+        </div>
+
+        <div class="btn-group">
+          <button onclick="scrollToSection('work')">View My Work →</button>
+          <button onclick="scrollToSection('contact')">Get in Touch →</button>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-card">
+          <div class="hero-card-title">First Impression Audit</div>
+          <p>Where internal teams see architecture and documentation, first-time users see ambiguity. Identifying this gap transforms churn into loyalty.</p>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-title">Competitive Clarity</div>
+          <p>Features rarely create enduring moats. Genuine cognitive ease, transparent pricing, and humane interaction design do.</p>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-title">Ready to Talk?</div>
+          <p>Scroll down and let's discuss what you're investigating.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO I AM SECTION -->
+<section class="dark" id="about">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <span class="section-label">01 — The Studio</span>
+        <h2>I Don't Just Research Products. <em>I Experience Them.</em></h2>
+        
+        <p>I am Chintanasri, a Product & Market Research Analyst devoted to studying digital and tangible products from the vantage point of those who inhabit them every day.</p>
+
+        <p>My practice marries hands-on product discovery, competitive landscape forensics, user dialogue, and feature deconstruction to illuminate patterns that data dashboards overlook. You don't need someone with a decade of experience to give value to your project. You just need someone who would see your project as a part of their own, and believe in your project more than you do. That's who we are</p>
+
+        <div class="hero-quote" style="margin-top: 2rem;">
+          <p>"My aim is to distill quiet frustrations into clear, timeless recommendations that empower makers to craft genuinely better products."</p>
+          <p style="font-size: 0.9rem; margin-top: 1rem; color: #999;">— CHINTANASRI, IOTAHUNT STUDIO</p>
+        </div>
+      </div>
+
+      <div>
+        <span class="section-label">Core Framework</span>
+        <h3 style="margin-bottom: 2rem;">What does the consumer truly experience?</h3>
+        
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-label">01 / Sensation</div>
+            <h3 style="font-size: 1.1rem;">How does it feel to use?</h3>
+            <p style="margin: 0;">Assessing subtle cognitive friction, mental tiredness, and the feeling of ease.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-label">02 / Choice</div>
+            <h3 style="font-size: 1.1rem;">Why do people choose it?</h3>
+            <p style="margin: 0;">Uncovering genuine underlying motives over marketing claims.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-label">03 / Friction</div>
+            <h3 style="font-size: 1.1rem;">Where do they hesitate?</h3>
+            <p style="margin: 0;">Mapping silent moments of doubt and unspoken abandonments.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-label">04 / Landscape</div>
+            <h3 style="font-size: 1.1rem;">What do others offer?</h3>
+            <p style="margin: 0;">Dissecting competitor positioning, alternatives, and distinct philosophies.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-label">05 / Void</div>
+            <h3 style="font-size: 1.1rem;">What remains unaddressed?</h3>
+            <p style="margin: 0;">Discovering untouched customer desires and overlooked spaces.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-label">06 / Harmony</div>
+            <h3 style="font-size: 1.1rem;">What creates true excellence?</h3>
+            <p style="margin: 0;">Drafting meaningful product evolutions rooted in practical simplicity.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REALITY DICHOTOMY -->
+<section id="dichotomy">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Perspective</span>
+      <h2>Inside the Organization vs. <em>The Real Human Experience</em></h2>
+      <p>How internal assumptions diverge from authentic consumer reality.</p>
+    </div>
+
+    <div class="comparison-list">
+      <div>
+        <h3>Inside the Organization</h3>
+        <div class="list-item">Feature-completeness as success metric</div>
+        <div class="list-item">Roadmap priorities driven by internal capability</div>
+        <div class="list-item">Pricing anchored to cost basis and competitors</div>
+        <div class="list-item">Documentation assumed to be self-evident</div>
+        <div class="list-item">Customer feedback filtered through support biases</div>
+      </div>
+
+      <div>
+        <h3>The Real Human Experience</h3>
+        <div class="list-item">Cognitive ease and transparent value matter most</div>
+        <div class="list-item">First-time onboarding friction drives abandonment</div>
+        <div class="list-item">True willingness to pay reflects genuine problem urgency</div>
+        <div class="list-item">Unspoken hesitations reveal the real barriers</div>
+        <div class="list-item">Silent users disappear long before they complain</div>
+      </div>
+    </div>
+
+    <div class="hero-quote" style="margin-top: 2rem;">
+      <p>The gap between what teams build and what users actually experience is where most products fail quietly. I bridge that gap with evidence.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT I DO SECTION -->
+<section class="dark" id="work">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Disciplines</span>
+      <h2>Research. Analysis. Insight. Action.</h2>
+      <p>Seven disciplines crafted to replace speculation with enduring tactical and strategic certainty.</p>
+    </div>
+
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-label">01 // Discovery</div>
+        <div class="card-title">Product Research</div>
+        <div class="card-description">Investigating products from an authentic user standpoint — dissecting features, flow, clarity, strengths, and holistic tactile delight.</div>
+        <div class="card-footer">Usability Audits</div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">02 // Landscape</div>
+        <div class="card-title">Competitive Analysis</div>
+        <div class="card-description">Deconstructing rivals and substitutes to unpack their real pricing mechanics, feature depth, positioning claims, and weaknesses.</div>
+        <div class="card-footer">Parity & Advantage</div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">03 // Horizon</div>
+        <div class="card-title">Market Research</div>
+        <div class="card-description">Gauging macro movements, shifting user appetites, underserved niches, and the viability of emerging market categories.</div>
+        <div class="card-footer">Category Dynamics</div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">04 // Humanity</div>
+        <div class="card-title">Consumer & User Research</div>
+        <div class="card-description">Listening deeply to real people to grasp why they adopt, why they hesitate, and what prompts their eventual purchasing decisions.</div>
+        <div class="card-footer">Behavioral Inquiry</div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">05 // Immersion</div>
+        <div class="card-title">Hands-On Research</div>
+        <div class="card-description">Direct, experiential testing. Using the software or service natively in real contexts rather than relying on abstract marketing decks.</div>
+        <div class="card-footer">Empirical Testing</div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">06 // White Space</div>
+        <div class="card-title">Feature & Gap Analysis</div>
+        <div class="card-description">Pinpointing missing links, broken handoffs, and clear opportunities to provide disproportionate consumer value.</div>
+        <div class="card-footer">Opportunity Mapping</div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 1.5rem;">
+      <div class="card-label">07 // Synthesis</div>
+      <div class="card-title">Strategic Recommendations</div>
+      <div class="card-description">Distilling all findings into actionable product design improvements and clear strategic direction ready for immediate delivery.</div>
+      <button style="margin-top: 1rem;" onclick="scrollToSection('contact')">Let's Explore →</button>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS SECTION -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Methodology</span>
+      <h2>From Question to Insight.</h2>
+      <p>A tranquil, disciplined progression designed to strip away internal assumptions and reveal verifiable human truth.</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-number">01</div>
+        <h3>Define</h3>
+        <p>Clarifying the underlying question, the boundaries of inquiry, and what genuine clarity will unlock for the product roadmap.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">02</div>
+        <h3>Explore</h3>
+        <p>Cataloging existing solutions, competitor claims, pricing structures, and public sentiment across the entire product landscape.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">03</div>
+        <h3>Experience</h3>
+        <p>Testing directly as an authentic first-time consumer — documenting every point of delight, disorientation, and cognitive friction.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">04</div>
+        <h3>Interview</h3>
+        <p>Engaging in neutral, curious conversations with real users to understand their lived contexts without leading prompts.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">05</div>
+        <h3>Analyze</h3>
+        <p>Cross-referencing behavioral patterns, competitor deficits, and user quotes to uncover structural opportunities.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">06</div>
+        <h3>Recommend</h3>
+        <p>Distilling all findings into actionable product design improvements and clear strategic direction ready for immediate delivery.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE SECTION -->
+<section class="dark">
+  <div class="container text-center">
+    <div class="quote-section">
+      <span class="section-label" style="display: block; margin-bottom: 1rem;">Guiding Principle</span>
+      <h2><em>"The world does not need more features. It needs more humanity in the things we make."</em></h2>
+      <p>Products that endure are those that understand their users before they understand themselves.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHO I WORK WITH -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Collaboration</span>
+      <h2>Partners in Curiosity.</h2>
+      <p><em>"You don't have to be a large company. You just need a question worth investigating. And every question is worth hearing to"</em></p>
+    </div>
+
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-label">01</div>
+        <div class="card-title">Startups</div>
+        <div class="card-description">Validating problem spaces and alternatives before committing costly engineering cycles.</div>
+        <div class="card-footer">Early Traction</div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">02</div>
+        <div class="card-title">Founders</div>
+        <div class="card-description">Needing a candid, objective perspective on their current prototype before investor presentations.</div>
+        <div class="card-footer">Unbiased Audit</div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">03</div>
+        <div class="card-title">Product Teams</div>
+        <div class="card-description">Investigating unexpected churn or evaluating strategic roadmap options with fresh customer evidence.</div>
+        <div class="card-footer">Sprint Insight</div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">04</div>
+        <div class="card-title">Small Businesses</div>
+        <div class="card-description">Transitioning into digital tools and seeking clarity on local competitive moats and consumer behavior.</div>
+        <div class="card-footer">Niche Strategy</div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">05</div>
+        <div class="card-title">Student Projects</div>
+        <div class="card-description">Academic prototypes, thesis concepts, and hackathon prototypes seeking real-world consumer rigor.</div>
+        <div class="card-footer">Academic Rigor</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EARLY STAGE -->
+<section class="dark">
+  <div class="container">
+    <div class="hero-quote">
+      <span class="section-label" style="display: block; margin-bottom: 1rem;">Now is the Time</span>
+      <h2 style="margin-bottom: 1rem;">Get Involved Before This Becomes a Business.</h2>
+      
+      <p>I am currently working toward turning this research practice into something serious. At this formative stage, I am actively seeking meaningful opportunities to investigate real products, early MVPs, and complex market questions.</p>
+
+      <div class="contact-box" style="margin: 2rem 0;">
+        <p style="margin: 0; font-style: italic; color: #d4af37;">Selected projects may currently be taken completely free of charge or at minimal cost. Not because the research has no value. But because I'm building something. Something that would sastify you, me and the people who use this</p>
+      </div>
+
+      <p>As this develops into a full-time business, availability and scope will adapt. If you have a question or product you wish to see explored with uncompromising candor, now is an ideal moment to reach out.</p>
+
+      <button onclick="scrollToSection('contact')" style="margin-top: 2rem;">Start a Conversation →</button>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Initiate Dialogue</span>
+      <h2>Bring me the question. <em>I'll investigate the problem.</em></h2>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <p>Whether you have an established product experiencing retention drops or an unformed concept on a napkin, tell me what you need to understand. I review all inquiries thoughtfully.</p>
+
+        <div class="contact-box">
+          <h4>Direct Email</h4>
+          <p><a href="mailto:chintanasri67@gmail.com">chintanasri67@gmail.com</a></p>
+        </div>
+
+        <div class="contact-box">
+          <h4>Direct Phone / WhatsApp</h4>
+          <p><a href="tel:+918610250964">+91 8610250964</a></p>
+        </div>
+
+        <div class="contact-box">
+          <h4>Availability</h4>
+          <p>Available globally for remote & asynchronous research engagements.</p>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 style="margin-top: 0; margin-bottom: 1.5rem; color: #ffffff;">Quick Inquiry</h3>
+        
+        <form id="contactForm" class="form-grid">
+          <div class="form-message" id="formMessage"></div>
+
+          <div class="form-group">
+            <label for="name">Your Name *</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              required 
+              placeholder="Jane Doe"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              required 
+              placeholder="jane@studio.com"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number (Optional)</label>
+            <input 
+              type="tel" 
+              id="phone" 
+              name="phone" 
+              placeholder="+91 / Country code"
+            >
+          </div>
+
+          <button type="submit" class="form-submit" id="submitBtn">Submit Research Inquiry →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<section class="dark text-center">
+  <div class="container">
+    <span class="section-label">Gratitude</span>
+    <h2>Thank you for your curiosity.</h2>
+    <p>Every inquiry is a reminder that better products begin with better questions.</p>
+    <div style="margin-top: 2rem; color: #888; font-size: 0.9rem;">
+      <p>Chintanasri © 2024 • <a href="https://www.instagram.com/iotahunt/" target="_blank">Instagram</a> • <a href="https://www.linkedin.com/in/chintanasri-r-b8435241b/" target="_blank">LinkedIn</a> • <a href="https://discord.gg/hC62cTtx9Y">Discord</a></p>
+    </div>
+  </div>
+</section>
+
+<script>
+  // ====== BUTTON FUNCTIONS ======
+  function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  // ====== FORM SUBMISSION TO GOOGLE SHEETS ======
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxtJZ6e3NSVXQSd3-v6wmLlCQzB3JGmpmE3PXAzAk1HTTR7CJxOzwyNEsl3eSzYIo0yqw/exec';
+  
+  const form = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const messageDiv = document.getElementById('formMessage');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+
+    if (!name || !email) {
+      showError('Name and email are required.');
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    messageDiv.innerHTML = '';
+
+    try {
+      const url = SCRIPT_URL + '?' + new URLSearchParams({
+        name: name,
+        email: email,
+        phone: phone
+      });
+
+      await fetch(url, {
+        method: 'GET',
+        mode: 'no-cors'
+      });
+
+      showSuccess();
+      form.reset();
+
+    } catch (error) {
+      console.error('Network error:', error);
+      showError('Network error. Please try again.');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit Research Inquiry →';
+    }
+  });
+
+  function showSuccess() {
+    messageDiv.className = 'form-message success';
+    messageDiv.textContent = '✓ Thank you! Your inquiry has been received. I\'ll review and get back to you within 24-48 hours.';
+  }
+
+  function showError(msg) {
+    messageDiv.className = 'form-message error';
+    messageDiv.textContent = '✗ ' + (msg || 'Something went wrong. Please try again.');
+  }
+</script>
+
+</body>
+</html>
